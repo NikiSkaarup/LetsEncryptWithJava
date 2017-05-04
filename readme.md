@@ -25,7 +25,7 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 
 ## Ubuntu / Linux
 
-### Download a [script](https://gist.github.com/Firefishy/109b0f1a90156f6c933a50fe40aa777e) which will download and install the certificates for you on your server
+### Run the command below to download a [script](https://gist.github.com/Firefishy/109b0f1a90156f6c933a50fe40aa777e) which can download and install the certificates for you on your server
 
 ``` wget https://gist.github.com/Firefishy/109b0f1a90156f6c933a50fe40aa777e/raw/15926be913682876ae68bb4f71e489bc53feaae3/install-letsencrypt-in-jdk.sh ```
 
@@ -35,7 +35,7 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 ### Run the script
 ``` bash ./install-letsencrypt-in-jdk.sh ```
 
-### Restart tomcat
+### Restart tomcat so it will be using the updates certificates
 ``` service tomcat8 restart ```
 
 
