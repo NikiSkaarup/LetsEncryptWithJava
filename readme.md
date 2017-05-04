@@ -7,7 +7,7 @@
 
 [Lets Encrypt Certificate](https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.der)
 
-Save the certificate in your downloads folder and 
+Save the certificate in your downloads folder
 
 ### Open Command Prompt as Administrator, and run the Command to install Let's Encrypt certificate:
 
