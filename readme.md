@@ -35,7 +35,7 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 ### Run the script
 ``` bash ./install-letsencrypt-in-jdk.sh ```
 
-### Restart tomcat so it will be using the updates certificates
+### Restart tomcat so it will be using the updated certificates
 ``` service tomcat8 restart ```
 
 
