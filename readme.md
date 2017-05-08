@@ -23,6 +23,14 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 #### 32bit Java
 ``` "C:\Program Files (x86)\Java\jdk1.8.0_131\bin\keytool" -trustcacerts -keystore "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit -noprompt -importcert -alias lets-encrypt-x3-cross-signed -file %USERPROFILE%\downloads\lets-encrypt-x3-cross-signed.der ```
 
+##### certificate already exists error
+
+#### 64bit Java
+``` keytool -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
+
+#### 32bit Java
+``` keytool -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
+
 ## Ubuntu / Linux
 
 ### Download a [script](https://gist.github.com/Firefishy/109b0f1a90156f6c933a50fe40aa777e) which will download and install the certificates for you on your server
