@@ -26,10 +26,10 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 ##### certificate already exists error
 
 #### 64bit Java
-``` keytool -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
+``` "C:\Program Files\Java\jdk1.8.0_131\bin\keytool" -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
 
 #### 32bit Java
-``` keytool -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
+``` "C:\Program Files (x86)\Java\jdk1.8.0_131\bin\keytool" -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
 
 ## Ubuntu / Linux
 
