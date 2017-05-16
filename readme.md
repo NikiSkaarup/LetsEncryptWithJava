@@ -54,3 +54,34 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 
 ### Restart tomcat so it will be using the updated certificates
 ``` service tomcat8 restart ```
+
+## Mac OS - by radeonxray
+
+###Step 1:
+From https://www.mkyong.com/java/how-to-set-java_home-environment-variable-on-mac-os-x/
+
+#### MacOS Terminal:
+
+Run: ``` nano .bash_profile ```
+
+Insert the following: ``` export JAVA_HOME=$(/usr/libexec/java_home) ```
+Save and close nano (*ctrl + x, ctrl + y*)
+
+Run: ``` source .bash_profile ```
+(Nothing happens, that's ok)
+
+Run: ``` echo $JAVA_HOME ```
+(Terminal should now show/point to the Path)
+
+###Step 2:
+From http://stackoverflow.com/questions/34110426/does-java-support-lets-encrypt-certificates
+
+MacOS Terminal:
+Run: ``` sudo cp -a $JAVA_HOME/jre/lib/security/cacerts $JAVA_HOME/jre/lib/security/cacerts.orig ```
+
+Run: ``` wget https://letsencrypt.org/certs/lets-encrypt-x3-cross-signed.der ```
+(requires you have already installed wget on MacOS, if not, run: brew install wget)
+
+Run: ``` sudo keytool -trustcacerts -keystore $JAVA_HOME/jre/lib/security/cacerts -storepass changeit -noprompt -importcert -alias lets-encrypt-x3-cross-signed -file lets-encrypt-x3-cross-signed.der ```
+
+Restart the Tomcat server and/or Netbeans project.
