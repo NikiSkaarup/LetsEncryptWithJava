@@ -11,11 +11,16 @@ Save the certificate in your downloads folder
 
 ### Open Command Prompt as Administrator, and run the Command to install Let's Encrypt certificate:
 
+If JAVA_HOME is set in your SYSTEM Enviroment Variables, use the Simple Versions
+
 if your java folder is located in **Program Files** use the 64bit version
 
 if your java folder is located in **Program Files (x86)** use the 32bit version
 
 *Check your java version and change [ jdk1.8.0_131 ] to match your installed JDK version, the JDK is located in your Java folder*
+
+#### Simple version
+``` "%JAVA_HOME%\bin\keytool" -trustcacerts -keystore "%JAVA_HOME%\jre\lib\security\cacerts" -storepass changeit -noprompt -importcert -alias lets-encrypt-x3-cross-signed -file %USERPROFILE%\downloads\lets-encrypt-x3-cross-signed.der ```
 
 #### 64bit Java
 ``` "C:\Program Files\Java\jdk1.8.0_131\bin\keytool" -trustcacerts -keystore "C:\Program Files\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit -noprompt -importcert -alias lets-encrypt-x3-cross-signed -file %USERPROFILE%\downloads\lets-encrypt-x3-cross-signed.der ```
@@ -23,7 +28,11 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 #### 32bit Java
 ``` "C:\Program Files (x86)\Java\jdk1.8.0_131\bin\keytool" -trustcacerts -keystore "C:\Program Files (x86)\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit -noprompt -importcert -alias lets-encrypt-x3-cross-signed -file %USERPROFILE%\downloads\lets-encrypt-x3-cross-signed.der ```
 
-##### certificate already exists error
+### certificate already exists error
+
+#### Simple version
+
+``` "%JAVE_HOME%\bin\keytool" -delete -alias lets-encrypt-x3-cross-signed -keystore "%JAVE_HOME%\jre\lib\security\cacerts" -storepass changeit ```
 
 #### 64bit Java
 ``` "C:\Program Files\Java\jdk1.8.0_131\bin\keytool" -delete -alias lets-encrypt-x3-cross-signed -keystore "C:\Program Files\Java\jdk1.8.0_131\jre\lib\security\cacerts" -storepass changeit ```
@@ -45,6 +54,3 @@ if your java folder is located in **Program Files (x86)** use the 32bit version
 
 ### Restart tomcat so it will be using the updated certificates
 ``` service tomcat8 restart ```
-
-
-
